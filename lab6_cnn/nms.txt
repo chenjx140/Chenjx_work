@@ -1,0 +1,12 @@
+1.  
+    a. Get all prediction boxes
+    b. Sort the prediction boxes in order of score
+    c. The prediction calculation box with the highest score and the possible prediction box are removed, and the box with IOU greater than the threshold is removed
+    d. Record the prediction box with the highest score, and repeat 1)-4) from the remaining predictions until the last prediction box
+
+
+2.Non-Maximum Suppression (NMS) is essential for object detection and affects the evaluation results by incorporating False Positives (FP) and False Negatives (FN)
+
+3. we get a single-detection per target. Redundancy is reduced, and the amount of calculation is reduced during training.
+
+4. When the objects appear densely, the IOU ratio of the two prediction boxes may also exceed the threshold. Forcing the prediction box with a low score to be removed, which will lead to missed detection and reduce the recall rate of the model. This is detrimental to the detection of groups of objects that obscure each other.

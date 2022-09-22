@@ -1,0 +1,13 @@
+Q: Sometimes, the centroid of the cluster from lidar is not the actual centroid
+A : THe reason is about the distrotion from 3D to 2D. 
+sometimes, a surface is divided into multi-clusters(related to threshold) with multi-centroid.
+
+
+Q: the rays of lidar is limited. It's hard to detect the whole object's centroid
+A:The laser light emitted by the lidar is limited. During the movement, 
+the lidar may only scan a part of the object (not a whole). 
+Then the centroid at this time is not the centroid of the entire object.
+
+Q: Fast movement can cause calculation errors.
+A: The calculation method of lidar is through the range. If the robot moves too fast,
+ when the ray accepts it, it may no longer be where the ray shoots.

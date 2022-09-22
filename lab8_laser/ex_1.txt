@@ -1,0 +1,10 @@
+before starting roslaunch greenline mapping.launch. there is only odom and base_footprint in the rqt_tf_tree
+It likes the initialization. after running. the map node will provide the information to the Odom and the base_footprint 
+will send information to 5 nodes. All of them are related to the robot. The wheel's angular and linear speed, and also data of 
+lidar are in them. So, the robot position and direction can be calculated from the information.  
+
+the difference between odom and map:
+In an ideal world, both odom and map will be fixed and in the same location when SLAM is executed. However, the world is not ideal. 
+The odom frame is useful as an accurate, short-term local reference, but drift makes it a poor frame for long-term reference.
+The map frame is useful as a long-term global reference, but discrete jumps in position estimators make it a poor reference frame for local sensing and acting.
+combined with odom and map will have a better result. 
